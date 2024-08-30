@@ -1,0 +1,2 @@
+ls: cannot access 'data': No such file or directory
+slurmstepd: error: *** JOB 501289 ON athena104 CANCELLED AT 2024-08-27T15:25:55 DUE TO TIME LIMIT ***
