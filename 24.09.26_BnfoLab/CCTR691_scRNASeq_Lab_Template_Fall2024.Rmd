@@ -21,10 +21,8 @@ Use the Athena terminal to set up your lab directory and obtain needed files.
 # create and navigate into a new directory for this lab
 mkdir scRNASeq
 cd scRNASeq
-
 # Copy feature count directory
 cp -r /lustre/home/cctr691/scRNASeq/filtered_feature_bc_matrix_WHIM2_106361_HumanOnly .
-
 # Copy supporting files
 cp /lustre/home/cctr691/scRNASeq/MitoCodingGenes13_human.txt .
 cp /lustre/home/cctr691/scRNASeq/UCD52CR_107086_web_summary.html .
@@ -61,9 +59,10 @@ Also, to get help using any command, type “?” followed by the command to see
 
 Follow the steps below and answer the questions.  This lab is based off of, but not exactly the same as, the Seurat introductory tutorial.  Feel free to [explore that tutorial for more in-depth information](libra
 
-### Load libraries
 
 Edit the setwd() command to point to YOUR lab directory!
+### Load libraries
+
 ```{r}
 library(Seurat)
 library(dplyr)
@@ -72,10 +71,8 @@ library(dplyr)
 ```{r}
 #Load the WHIM2 dataset into Seurat:
 whim.data <- Read10X(data.dir = "./scRNASeq/filtered_feature_bc_matrix_WHIM2_106361_HumanOnly")
-
 #Initialize the Seruat Object:
 whim <- CreateSeuratObject(counts = whim.data, project = "whim2", min.cells = 3, min.features = 200)
-
 #View a summary of the object:
 whim
 ```
@@ -362,14 +359,8 @@ Now we can explore each gene one at a time, which is not very efficient.
 Next we will run an all-by-all differential expression analysis to identify the top 10 gene markers for each cluster.
 
 ```{r}
-# Install packages
-install.packages("Seurat")
-install.packages("dplyr")
-install.packages("magrittr")
-# Load the required libraries
 library(Seurat)
 library(dplyr)
-library(magrittr)
 ```
 
 ```{r}
@@ -451,6 +442,7 @@ Bonus Q2) Plot the tSNE map, only color it by mitochondrial expression.  Use the
 
 Finally, save this file, then knit your HTML report for submission via GitHub.  
 Go back to the Word document for github instructions!
+
 
 
 
